@@ -1,13 +1,16 @@
 import React,{Component} from "react"
-import ReactDOM from "react-dom"
+import {render} from "react-dom"
+import {Router,Route,hashHistory} from "react-router"
+import {Home} from "./routes/Home"
 import "./components/public/reset.css"
 
-class Header extends Component {
-    render(){
-        return (
-            <div>hello world</div>
-        )
-    }
+const App = ()=>{
+  
+  return <Router history={hashHistory}>
+    
+      <Route path="/" component={Home}></Route>
+    </Router>
+ 
 }
 
-ReactDOM.render(<Header />,document.getElementById("root"))
+render(<App /> ,document.getElementById("root"))
